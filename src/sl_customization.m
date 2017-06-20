@@ -5,9 +5,10 @@ end
 
 %% Define custom menu function
 function schemaFcns = getMcMasterTool(callbackInfo) 
+    schemaFcns = {};    
     if strcmp(get_param(gcb, 'Selected'), 'on') && ...
             strcmp(get_param(gcb, 'BlockType'), 'SubSystem')
-        schemaFcns = {@getFlattenSubsystem};
+        schemaFcns{end+1} = @getFlattenSubsystem;
     end
 end
 
