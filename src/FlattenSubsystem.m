@@ -1,10 +1,10 @@
 function FlattenSubsystem(address, subToFlatten)
-% FLATTENSUBSYSTEM Takes all blocks in a subsystem and places them in the
-% current system.
+% FLATTENSUBSYSTEM Take all blocks in a subsystem and place them in the
+%   current system.
 %
-% Inputs:
-%   address         The Simulink system path.
-%   subToFlatten    Cell array of subsystems to be flattened.
+%   Inputs:
+%       address         Simulink system path.
+%       subToFlatten    Cell array of subsystems to be flattened.
 
     for blk = 1:length(subToFlatten)
         if ~strcmp(get_param(subToFlatten{blk}, 'BlockType'), 'SubSystem')
