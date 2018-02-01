@@ -5,12 +5,13 @@ function FlattenSubsystem(address, subToFlatten)
 %   Inputs:
 %       address         Simulink system path.
 %       subToFlatten    Cell array of subsystems to be flattened.
+%
+%   Outputs:
+%       N/A
 
     for blk = 1:length(subToFlatten)
         if ~strcmp(get_param(subToFlatten{blk}, 'BlockType'), 'SubSystem')
-            disp(['Error using ' mfilename ':' char(10) ...
-                ' One or more blocks selected are not a subsystem.' char(10)])
-            return
+            error(' One or more blocks selected are not a subsystem.')
         end
 
         allBlocksSub = find_system(subToFlatten{blk}, 'SearchDepth', 1);
@@ -124,7 +125,6 @@ function FlattenSubsystem(address, subToFlatten)
                                     connectedMap(portKey) = portToUse;
                                 end
                             end
-
                         end
                         z = z + 1;
                     end
