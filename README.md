@@ -11,4 +11,4 @@ as the "Expand Subsystem" operation. This tool is still beneficial for earlier
 versions of Matlab/Simulink, as well as handling more types of subsystems*
 
 ## User Guide
-For installation and other information, please see the [User Guide](doc/FlattenSubsystem_UserGuide).pdf.
+For installation and other information, please see the [User Guide](doc/FlattenSubsystem_UserGuide.pdf).
