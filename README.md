@@ -1,4 +1,4 @@
-# Flatten Subsystem
+# Flatten Subsystem Tool
 
 The Flatten Subsystem tool automatically flattens a Simulink subsystem, that
 is, it moves the subsystem contents up one level, reconnects the signals, and
