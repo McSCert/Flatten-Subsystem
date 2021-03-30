@@ -82,7 +82,7 @@
 % Briefly, what is the tool?
 The \ToolName tool automatically flattens a Simulink subsystem, that is, it moves the subsystem contents up one level, reconnects the signals, and removes the subsystem block. This tool is useful for making quick transformations to a model by automating the tedious task of manually copying and connecting the many elements contained in a subsystem.
 
-\textit{Note: This functionality has been since included in \matlab/Simulink 2014a as the ``Expand Subsystem" operation\footnote{\url{https://www.mathworks.com/help/simulink/ug/expand-subsystem-contents.html}}. This tool is still beneficial for earlier versions of \matlab/Simulink, as well as handling more types of subsystems}
+\paragraph*{Note:} This functionality has been since included in \matlab/Simulink 2014a as the ``Expand Subsystem" operation\footnote{\url{https://www.mathworks.com/help/simulink/ug/expand-subsystem-contents.html}}. This tool is still beneficial for earlier versions of \matlab/Simulink, as well as handling more types of subsystems.
 
 % Is there more information?
 \subsection{More Information}
@@ -110,19 +110,32 @@ This section describes what must be done to setup the tool, as well as how to us
 \begin{enumerate}
 	\item Use \Matlab/\Simulink 2011b or newer.
 	\item Install the \href{https://github.com/McSCert/Auto-Layout}{Auto Layout Tool}.
-	\item To install the tool,
-	\begin{enumerate}
-		\item from a \file{.zip} file --- unzip the contents into your desired location. Ensure the unzipped folder and subfolders are present in your \mpath, or add them if they are not present. Run \href{https://www.mathworks.com/help/simulink/ug/registering-customizations.html}{sl\_refresh\_customizations} to refresh the Context Menu. 
-		\item from a \file{.mltbx} file --- simply open \Matlab and double-click on the file. Your \mpath should be automatically configured.
-		\item from the files only --- add the folders and subfolders to your \mpath. Run \href{https://www.mathworks.com/help/simulink/ug/registering-customizations.html}{sl\_refresh\_customizations} to refresh the Context Menu.
+	\item To install \ToolName, use one of the following approaches:
+\begin{enumerate}
+		\item \textbf{Download the \file{.zip} from GitHub}
+		\begin{enumerate} 
+			\item Unzip the contents into your desired location. 
+			\item Add the unzipped folder and subfolders to your \mpath. 
+			\item Download the \href{https://github.com/McSCert/Simulink-Utility}{Simulink-Utility} in the same manner. Add the folder and subfolders to your \mpath also. This is a dependency for the tool to work correctly.
+		\end{enumerate}
+		\item \textbf{Use the Git command line}
+		\begin{enumerate}
+			\item Use the following command to download the tool and any necessary submodules. 
+			\begin{verbatim}
+			git clone --recursive https://github.com/McSCert/Flatten-Subsystem
+			\end{verbatim}
+			\item Add the folder and subfolders to your \mpath. 
+		\end{enumerate}
+		\item \textbf{If you already have the files}
+		\begin{enumerate}
+			\item Add the tool folder and subfolders to your \mpath. 
+		\end{enumerate}
 	\end{enumerate}
-	\begin{itemize}
-		\item \textit{Note:} If running the command ``\cmd{which FlattenSubsystem}'' indicates that the script is not found, then the tool needs to be added to the \mpath.
-		For information on adding files to the \mpath, please see the \href{https://www.mathworks.com/help/matlab/matlab_env/add-remove-or-reorder-folders-on-the-search-path.html}{MathWorks documentation}.
-	\end{itemize}
-	\item Ensure the Simulink-Utility folder is on your \mpath. This is a dependency for the tool to work correctly.
+
 	\item Ensure your model is open (or loaded, for command line use) and unlocked.
 \end{enumerate}
+
+\paragraph{Troubleshooting:} If running the command ``\cmd{which FlattenSubsystem}'' indicates that the script is not found, then the tool needs to be added to the \mpath.	For information on adding files to the \mpath, please see the \href{https://www.mathworks.com/help/matlab/matlab_env/add-remove-or-reorder-folders-on-the-search-path.html}{MathWorks documentation}.
 
 %---------------------------------------
 % How/when do you access the tool?
